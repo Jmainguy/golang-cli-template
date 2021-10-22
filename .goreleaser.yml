@@ -26,9 +26,9 @@ nfpms:
 - file_name_template: '{{ .ProjectName }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   homepage:  --REPOLINK--
   description: --DESCRIPTION--
-  maintainer: Jonathan Seth Mainguy <jon@soh.re>
+  maintainer: --MAINTAINERNAME-- <--MAINTAINEREMAIL-->
   license: GPLv2
-  vendor: Jmainguy
+  vendor: --REPOOWNER--
   release: 1
   replacements:
     amd64: x86_64
@@ -43,15 +43,15 @@ nfpms:
 
 brews:
   - tap:
-      owner: jmainguy
+      owner: --REPOOWNER--
       name: homebrew-tap
     folder: Formula
     homepage: --REPOLINK--
     description: --DESCRIPTION--
     license: "GPL-2.0"
     commit_author:
-      name: Jonathan Mainguy
-      email: jon@soh.re
+      name: --MAINTAINERNAME--
+      email: --MAINTAINEREMAIL--
     test: |
       system "#{bin}/--BINARY--"
     install: |
