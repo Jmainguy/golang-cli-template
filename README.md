@@ -1,13 +1,21 @@
 # golang-cli-template
 
-This is a template for creating  golang cli application. It includes .github/ actions and .goreleaser.yml for automation.
+This is a template for creating golang cli application. 
 
-Edit .goreleaser.yml and replace the following variables in .goreleaser.yml with the appropriate values
+It uses github actions to run goreleaser and tests
+
+Edit all files and replace the following variables with the appropriate values
 
 ```
---BINARY--
---REPOLINK--
---DESCRIPTION--
+--BINARY-- # Would likely be golang-cli-template for this repo, if this was actually a cli
+--REPOLINK-- # https://github.com/Jmainguy/golang-cli-template
+--DESCRIPTION-- # Github Description, A template for creating golang cli applications
+--REPOOWNER-- # Jmainguy
+--REPONAME-- # golang-cli-template
+--MAINTAINERNAME-- # Jonathan Seth Mainguy
+--MAINTAINEREMAIL-- # jon@soh.re
 ```
+
+Replace this file with the modified .README-TEMPLATE.md file
 
 Add a secret to the new repo called GORELEASER_TOKEN with permissions to homebrew-tap repo.
