@@ -1,21 +1,28 @@
-# golang-cli-template
+# --BINARY--
+[![Go Report Card](https://goreportcard.com/badge/github.com/--REPOOWNER--/--REPONAME--)](https://goreportcard.com/badge/github.com/--REPOOWNER--/--REPONAME--)
+[![Release](https://img.shields.io/github/release/--REPOOWNER--/--REPONAME--.svg?style=flat-square)](https://github.com/--REPOOWNER--/--REPONAME--/releases/latest)
+[![Coverage Status](https://coveralls.io/repos/github/--REPOOWNER--/--REPONAME--/badge.svg?branch=main)](https://coveralls.io/github/--REPOOWNER--/--REPONAME--?branch=main)
 
-This is a template for creating golang cli application. 
+--DESCRIPTION--
 
-It uses github actions to run goreleaser and tests
-
-Edit all files and replace the following variables with the appropriate values
-
-```
---BINARY-- # Would likely be golang-cli-template for this repo, if this was actually a cli
---REPOLINK-- # https://github.com/Jmainguy/golang-cli-template
---DESCRIPTION-- # Github Description, A template for creating golang cli applications
---REPOOWNER-- # Jmainguy
---REPONAME-- # golang-cli-template
---MAINTAINERNAME-- # Jonathan Seth Mainguy
---MAINTAINEREMAIL-- # jon@soh.re
+## Usage
+```/bin/bash
+# Replace me with usage and examples
 ```
 
-Replace this file with the modified .README-TEMPLATE.md file
+## PreBuilt Binaries
+Grab Binaries from [The Releases Page](https://github.com/--REPOOWNER--/--REPONAME--/releases)
 
-Add a secret to the new repo called GORELEASER_TOKEN with permissions to homebrew-tap repo.
+## Install
+
+### Homebrew
+
+```/bin/bash
+brew install --REPOOWNER--/tap/--BINARY--
+```
+
+## Build
+```/bin/bash
+export GO111MODULE=on
+go build
+```
