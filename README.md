@@ -7,7 +7,7 @@
 
 ## Usage
 ```/bin/bash
-# Replace me with usage and examples
+--USAGE--
 ```
 
 ## PreBuilt Binaries
