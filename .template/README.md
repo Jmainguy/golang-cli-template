@@ -14,6 +14,7 @@ Edit all files and replace the following variables with the appropriate values
 --REPONAME-- # golang-cli-template
 --MAINTAINERNAME-- # Jonathan Seth Mainguy
 --MAINTAINEREMAIL-- # jon@soh.re
+--USAGE-- # Usage of binary, usually multi lines, suggest placing inside .usage text file
 ```
 
 Add a secret to the new repo called GORELEASER_TOKEN with permissions to homebrew-tap repo.
