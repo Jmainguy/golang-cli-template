@@ -1,3 +1,4 @@
+version: 2
 env:
   - GO111MODULE=on
 before:
@@ -12,16 +13,19 @@ builds:
     - windows
   goarch:
     - amd64
+
 archives:
-- name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-  replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    amd64: x86_64
-  format_overrides:
-  - goos: windows
-    format: zip
+  - name_template: >-
+      {{- .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end -}}
+    format_overrides:
+      - goos: windows
+        format: zip
+
 nfpms:
 - file_name_template: '{{ .ProjectName }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   homepage:  --REPOLINK--
@@ -30,8 +34,6 @@ nfpms:
   license: GPLv2
   vendor: --REPOOWNER--
   release: 1
-  replacements:
-    amd64: x86_64
   overrides:
       rpm:
         file_name_template: "{{ .ProjectName }}-{{ .Version }}-{{.Release}}.{{ .Arch }}"
@@ -40,22 +42,6 @@ nfpms:
   formats:
   - deb
   - rpm
-
-brews:
-  - tap:
-      owner: --REPOOWNER--
-      name: homebrew-tap
-    folder: Formula
-    homepage: --REPOLINK--
-    description: --DESCRIPTION--
-    license: "GPL-2.0"
-    commit_author:
-      name: --MAINTAINERNAME--
-      email: --MAINTAINEREMAIL--
-    test: |
-      system "#{bin}/--BINARY--"
-    install: |
-      bin.install "--BINARY--"
 
 checksum:
   name_template: 'checksums.txt'
